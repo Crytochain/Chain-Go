@@ -3,13 +3,13 @@ package Chain3Go
 
 import (
 	//	"encoding/hex"
-	//	"errors"
+	"errors"
 	"fmt"
 	"math/big"
 
-	//	"strings"
+	"strings"
 
-	//	"Chain3Go/accounts/abi"
+	"Chain3Go/accounts/abi"
 	"Chain3Go/accounts/keystore"
 
 	"Chain3Go/lib/common"
@@ -126,11 +126,11 @@ func SubChainTxSign(viaAddr string, netType int, keystoreStr, keystorePassword, 
 	//	return "", viaErr
 }
 
-//func AssembleInput(abiStr, name string, args ...interface{}) ([]byte, error) {
+func AssembleInput(abiStr, name string, args ...interface{}) ([]byte, error) {
 
-//	parsed, err := abi.JSON(strings.NewReader(abiStr))
-//	if err != nil {
-//		return nil, errors.New("abiStr error")
-//	}
-//	return parsed.Pack(name, args...)
-//}
+	parsed, err := abi.JSON(strings.NewReader(abiStr))
+	if err != nil {
+		return nil, errors.New("abiStr error")
+	}
+	return parsed.Pack(name, args...)
+}
