@@ -1,0 +1,126 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "MoacProto";
+
+package moac;
+
+service SCS {
+  rpc Sync (BlockSyncRequest) returns (BlockSyncReply) {}
+}
+
+service Vnode {
+  rpc ScsPush(stream ScsPushMsg) returns (stream ScsPushMsg) {}
+  rpc AccountInfo (AccountInfoRequest) returns (AccountInfoReply) {}
+  rpc ChainInfo (ChainInfoRequest) returns (ChainInfoReply) {}
+  rpc RemoteCall (RemoteCallRequest) returns (RemoteCallReply) {}
+  rpc ScbPublicCall (ScbPublicCallRequest) returns (ScbPublicCallReply) {}
+  rpc UploadBlock (UploadBlockRequest) returns (UploadBlockReply) {}
+  rpc DownloadBlock (DownloadBlockRequest) returns (DownloadBlockReply) {}
+}
+
+message ScbPublicCallRequest {
+  uint32 requestid = 1;
+  bytes sender = 2;
+  bytes contractaddr = 3;
+  bytes data = 4;
+}
+
+message ScbPublicCallReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message RemoteCallRequest {
+  uint32 requestid = 1;
+  bytes sender = 2;
+  bytes contractaddr = 3;
+  bytes data = 4;
+}
+
+message RemoteCallReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message StorageRequest {
+  uint32 reqtype = 1;  // 0: all data , 1: list(key2key) , 2: mapping , 3: structure , 4: single, 5:string or bytes
+  bytes storagekey = 2; 
+  bytes position = 3;
+  bytes structformat = 4; //no structure in structure: 1-single, 2-list, 3-string
+}
+
+message ChainInfoRequest {
+  uint32 requestid = 1;
+  bytes consensusaddr = 2;
+  repeated StorageRequest request = 3;
+}
+
+message ChainInfoReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message AccountInfoRequest {
+  uint32 requestid = 1;
+  bytes addr = 2;
+}
+message AccountInfoReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message ScsPushMsg {
+  bytes requestid     = 1;
+  bytes timestamp     = 2;
+  bool  requestflag   = 3;
+  bytes type          = 4; //1 direct call (funccode call), 2 subchain msg (SCS to SCS msg), 3 control msg (notifySCS, register, proposal)
+  bytes status        = 5; //control msg 0 regOpen, 1 regClose, 2 create Proposal, 3 dispute proposal, 4 approve proposal
+  bytes scsid         = 6;
+  bytes subchainid    = 7;
+  bytes sender        = 8;
+  bytes receiver      = 9;
+  bytes msghash       = 10;
+}
+
+message BlockSyncRequest {
+  uint32 requestid = 1;
+  bytes sender = 2;
+  uint32 blocknumber = 3;
+  bytes scsid = 4;
+}
+
+message BlockSyncReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message UploadBlockRequest {
+  uint32 requestid = 1;
+  bytes sender = 2;
+  uint64 blocknumber = 3;
+  bytes blockhash = 4;
+  bytes scsid = 5;
+  bytes subchainid = 6;
+  bytes blockdata = 7;
+}
+
+message UploadBlockReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
+
+message DownloadBlockRequest {
+  uint32 requestid = 1;
+  bytes sender = 2;
+  uint64 blocknumber = 3;
+  bytes blockhash = 4;
+  bytes scsid = 5;
+  bytes uploadscsid = 6;
+  bytes subchainid = 7;
+}
+
+message DownloadBlockReply {
+  uint32 requestid = 1;
+  bytes replybody = 2;
+}
