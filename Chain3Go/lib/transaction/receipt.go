@@ -22,9 +22,9 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/common/hexutil"
-	"github.com/innowells/moac-lib/rlp"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/common/hexutil"
+	"Chain3Go/lib/rlp"
 )
 
 //go:generate gencodec -type Receipt -field-override receiptMarshaling -out gen_receipt_json.go

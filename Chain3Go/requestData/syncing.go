@@ -1,7 +1,7 @@
 // requestData project syncing.go
 package requestData
 
-import "serverLayer/Chain3Go/types"
+import "Chain3Go/types"
 
 type SyncingResponse struct {
 	StartingBlock types.ComplexIntResponse `json:"startingBlock"`

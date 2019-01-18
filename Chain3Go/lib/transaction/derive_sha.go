@@ -19,9 +19,9 @@ package transaction
 import (
 	"bytes"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/rlp"
-	"github.com/innowells/moac-lib/trie"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/rlp"
+	"Chain3Go/lib/trie"
 )
 
 type DerivableList interface {

@@ -21,7 +21,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/innowells/moac-lib/common/hexutil"
+	"Chain3Go/lib/common/hexutil"
 )
 
 // Tests that data bitset encoding and decoding works and is bijective.

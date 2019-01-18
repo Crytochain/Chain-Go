@@ -37,10 +37,11 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/common/math"
-	"github.com/innowells/moac-lib/crypto"
-	"github.com/innowells/moac-lib/crypto/randentropy"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/common/math"
+	"Chain3Go/lib/crypto"
+	"Chain3Go/lib/crypto/randentropy"
+
 	"github.com/pborman/uuid"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/crypto/scrypt"

@@ -4,7 +4,7 @@ package requestData
 import (
 	"reflect"
 
-	"serverLayer/Chain3Go/types"
+	"Chain3Go/types"
 )
 
 // TransactionParameters GO transaction to make more easy controll the parameters

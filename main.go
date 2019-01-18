@@ -19,10 +19,10 @@ import (
 
 	"fmt"
 
-	"serverLayer/Chain3Go"
-	"serverLayer/Chain3Go/requestData"
-	//	"serverLayer/Chain3Go/types"
-	//	"serverLayer/Chain3Go/utils"
+	"Chain3Go"
+	"Chain3Go/requestData"
+	//	"Chain3Go/types"
+	//	"Chain3Go/utils"
 )
 
 var (

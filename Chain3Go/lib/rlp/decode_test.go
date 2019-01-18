@@ -27,7 +27,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/innowells/moac-lib/common"
+	"Chain3Go/lib/common"
 )
 
 func TestStreamKind(t *testing.T) {
@@ -71,12 +71,12 @@ func TestStreamKind(t *testing.T) {
 /*
  * This is to test an input with end
  * { from: '0xa8863fc8Ce3816411378685223C03DAae9770ebB',
-        //  nonce: '0x16',
-        //  gasPrice: '0x09502f9000',
-        //  gasLimit: '0x5208',
-        //  to: '0x7312F4B8A4457a36827f185325Fd6B66a3f8BB8B',
-        //  value: '0x016345785d8a0000',
-        //  data: '0x00' }
+        //  nonce: '0x16',
+        //  gasPrice: '0x09502f9000',
+        //  gasLimit: '0x5208',
+        //  to: '0x7312F4B8A4457a36827f185325Fd6B66a3f8BB8B',
+        //  value: '0x016345785d8a0000',
+        //  data: '0x00' }
 
 */
 func TestInputCommandStream(t *testing.T) {

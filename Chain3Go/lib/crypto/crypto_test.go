@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/innowells/moac-lib/common"
+	"Chain3Go/lib/common"
 )
 
 var testAddrHex = "970e8128ab834e8eac17ab8e3812f010678cf791"

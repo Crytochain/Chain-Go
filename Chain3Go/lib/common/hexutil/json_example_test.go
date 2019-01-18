@@ -20,7 +20,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/innowells/moac-lib/common/hexutil"
+	"Chain3Go/lib/common/hexutil"
 )
 
 type MyType [5]byte

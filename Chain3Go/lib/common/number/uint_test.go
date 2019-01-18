@@ -20,7 +20,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/innowells/moac-lib/common"
+	"Chain3Go/lib/common"
 )
 
 func TestSet(t *testing.T) {

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"serverLayer/Chain3Go/constants"
-	"serverLayer/Chain3Go/types"
+	"Chain3Go/constants"
+	"Chain3Go/types"
 )
 
 type RequestResult struct {

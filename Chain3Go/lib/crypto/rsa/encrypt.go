@@ -10,7 +10,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/innowells/moac-lib/log"
+	"Chain3Go/lib/log"
 )
 
 var decrypted string

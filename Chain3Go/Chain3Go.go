@@ -5,9 +5,9 @@ import (
 	"fmt"
 	//	"math/big"
 
-	"serverLayer/Chain3Go/netServe"
-	"serverLayer/Chain3Go/requestData"
-	"serverLayer/Chain3Go/types"
+	"Chain3Go/netServe"
+	"Chain3Go/requestData"
+	"Chain3Go/types"
 )
 
 var (

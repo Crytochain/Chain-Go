@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/common/hexutil"
-	"github.com/innowells/moac-lib/rlp"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/common/hexutil"
+	"Chain3Go/lib/rlp"
 )
 
 //go:generate gencodec -type Log -field-override logMarshaling -out gen_log_json.go

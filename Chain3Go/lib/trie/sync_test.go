@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/mcdb"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/mcdb"
 )
 
 // makeTestTrie create a sample test trie to test node-wise reconstruction.

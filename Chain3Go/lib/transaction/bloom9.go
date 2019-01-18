@@ -20,9 +20,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/innowells/moac-lib/common/hexutil"
-	"github.com/innowells/moac-lib/crypto"
-	"github.com/innowells/moac-lib/log"
+	"Chain3Go/lib/common/hexutil"
+	"Chain3Go/lib/crypto"
+	"Chain3Go/lib/log"
 )
 
 type bytesBacked interface {

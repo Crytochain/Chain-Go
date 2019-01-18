@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/innowells/moac-lib/common"
-	"github.com/innowells/moac-lib/rlp"
+	"Chain3Go/lib/common"
+	"Chain3Go/lib/rlp"
 )
 
 func init() {

@@ -24,8 +24,8 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/innowells/moac-lib/common/math"
-	"github.com/innowells/moac-lib/crypto/randentropy"
+	"Chain3Go/lib/common/math"
+	"Chain3Go/lib/crypto/randentropy"
 )
 
 const TestCount = 1000
