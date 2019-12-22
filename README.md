@@ -1,63 +1,86 @@
-# Chain3Go - Chain3 Go API
+# LBRMask Browser Extension for LBR
 
-MOAC Go API was built for MOAC chain. It was developed from MOAC RPC API, which can be used to develop Ðapp to MOAC chain. It supports both VNODE and SCS methods for MOAC.
+## Support
 
-## Chain3Go Installation
+If you're a user seeking support, [leave your feedbacks at our GIT site](https://github.com/LBRChain/LBRMask/issues).
 
-### setup $GOPATH
+中文安装指南可以参考[开发者博客](https://blog.csdn.net/lyq13573221675/article/details/82380846)
 
-```
-export GOPATH=/Users/[user]/go
-```
+安装视频在(YOUTUBE)(https://www.youtube.com/watch?v=kyBJxpa9sA0&t=111s);
 
-### go get
+## Introduction
+
+In order to help users and developers access LBR blockchain, we modified the [MetaMask Project](https://metamask.io/) to make it work with LBR blockchain. LBR blockchain JSON-RPC is compatiable with Ethereum WEB3 in many methods but is quite different in Transaction Format. Major changes are as the followings:
+- Use LBR-tx to replace the ethereumjs-tx for sign a raw transaction object;
+- Use LBR-provider-engine to replace the web3-provider-enginer for sending a signed Transaction to LBR network;
+- Use LBR-link to provide outside link with LBR explorer for displaying account info.
+- Connect with https://gateway.LBR.io instead of infurno.io to provide online services.
+
+LBRMask is a software for users to manage accounts, for sites to easily propose actions to users, and for users to coherently review actions before approving them. We build on this rapidly evolving set of protocols with the goal of empowering the most people to the greatest degree, and aspire to continuously evolve our offering to pursue that goal.
+
+
+## Developing Compatible Dapps
+
+If you're a web dapp developer, we welcome you to join us to further develop this tool:
+
+### New Dapp Developers
+
+- We recommend this [Learning Solidity](https://karl.tech/learning-solidity-part-1-deploy-a-contract/) tutorial series by Karl Floersch.
+- MetaMask team wrote a gentle introduction on [Developing Dapps with Truffle and MetaMask](https://medium.com/metamask/developing-ethereum-dapps-with-truffle-and-metamask-aa8ad7e363ba).
+
+### Current Dapp Developers
+
+- If you have a Dapp on Ethereum, and you want to move to LBR network, you can checkout our [wiki website](https://github.com/LBRChain/LBR-core/wiki/MoveToLBR) for more information. 
+- At this moment, LBRMask only supports MotherChain Dapps, MicroChain supports is under developing.
+
+## Building locally
+
+ - Install [Node.js](https://nodejs.org/en/) version 6.3.1 or later.
+ - Install dependencies:
+   - For node versions up to and including 9, install local dependencies with `npm install`.
+   - For node versions 10 and later, install [Yarn](https://yarnpkg.com/lang/en/docs/install/) and use `yarn install`.
+ - Install gulp globally with `npm install -g gulp-cli`.
+ - Build the project to the `./dist/` folder with `gulp build`.
+ - Optionally, to rebuild on file changes, run `gulp dev`.
+ - To package .zip files for distribution, run `gulp zip`, or run the full build & zip with `gulp dist`.
+
+ Uncompressed builds can be found in `/dist`, compressed builds can be found in `/builds` once they're built.
+
+### Running Tests
+
+Requires `mocha` installed. Run `npm install -g mocha`.
+
+Then just run `npm test`.
+
+You can also test with a continuously watching process, via `npm run watch`.
+
+You can run the linter by itself with `gulp lint`.
+
+## Development
 
 ```bash
-go get -u github.com/MOACChain/Chain3Go
+npm install
+npm start
 ```
 
-## MOAC Configuration
+## Build for Publishing
 
-### Install MOAC
-
-Download latest MOAC Vnode and SCS Releases from here: https://github.com/MOACChain/moac-core/releases
-
-### Run MOAC
-
-Run moac vnode on testnet
-```
-./moac --testnet
-```
-Run moac scs on testnet
-```
-./scsserver
-```
-
-Create new accounts and send transactions
-
-```
-mc.coinbase
-mc.accounts
-personal.newAccount()
-passphrase:
-repeat passphrase:
-
-miner.start()
---wait a few seconds
-miner.stop()
-
-personal.unlockAccount("0x18833df6ba69b4d50acc744e8294d128ed8db1f1")
-mc.sendTransaction({from: '0x18833df6ba69b4d50acc744e8294d128ed8db1f1', to: '0x2a022eb956d1962d867dcebd8fed6ae71ee4385a', value: chain3.toSha(12, "moac")}) 
-```
-
-## Chain3Go Execution
 ```bash
-go run main.go
+npm run dist
 ```
 
-### Requirements
+#### Writing Browser Tests
 
-* go ^1.8.3
+To write tests that will be run in the browser using QUnit, add your test files to `test/integration/lib`.
 
-[Go installation instructions.](https://golang.org/doc/install)
+## Other Docs
+
+- [How to add custom build to Chrome](./docs/add-to-chrome.md)
+- [How to add custom build to Firefox](./docs/add-to-firefox.md)
+- [How to add new networks to the Provider Menu](./docs/adding-new-networks.md)
+- [How to add a new translation to LBRMask](./docs/translating-guide.md)
+- [How to develop an in-browser mocked UI](./docs/ui-mock-mode.md)
+- [How to develop a live-reloading UI](./docs/ui-dev-mode.md)
+- [How to live reload on local dependency changes](./docs/developing-on-deps.md)
+
 

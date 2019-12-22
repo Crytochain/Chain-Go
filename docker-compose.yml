@@ -1,0 +1,11 @@
+metamascara:
+  build: ./
+  restart: always
+  ports:
+    - "9001"
+  environment:
+    MASCARA_ORIGIN: "https://wallet.LBR.io"
+    VIRTUAL_PORT: "9001"
+    VIRTUAL_HOST: "wallet.LBR.io"
+    LETSENCRYPT_HOST: "wallet.LBR.io"
+    LETSENCRYPT_EMAIL: "admin@LBR.io"
