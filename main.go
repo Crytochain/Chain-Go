@@ -83,7 +83,7 @@ func main() {
 	http.HandleFunc("/fstToSubChainCoin", fstToSubChainCoinHandle)
 	http.HandleFunc("/subChainCoinToFst", subChainCoinToFstHandle)
 	http.HandleFunc("/erc20Tx", erc20TxHandle)
-	http.HandleFunc("/moacTx", moacTxHandle)
+	http.HandleFunc("/LBRTx", LBRTxHandle)
 
 	log.Fatal(http.ListenAndServe(":8888", nil))
 }
@@ -576,8 +576,8 @@ func erc20TxHandle(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, reStr("fail", serverErr, nil))
 }
 
-//moac转账 - 未测试
-func moacTxHandle(w http.ResponseWriter, r *http.Request) {
+//LBR转账 - 未测试
+func LBRTxHandle(w http.ResponseWriter, r *http.Request) {
 
 	formAddr := r.FormValue("formAddress")
 	toAddr := r.FormValue("toAddress")
