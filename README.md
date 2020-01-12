@@ -1,4 +1,4 @@
-# LBRMask Browser Extension for LBR
+# LBR Mask Browser Extension for LBR
 
 ## Support
 
